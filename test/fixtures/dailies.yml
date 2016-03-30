@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  floor: 1
+  machineId: 1
+  userId: MyString
+  problemCategory: 1
+  problemDetail: MyString
+  date: 2016-03-23
+  comment: MyString
+  maintainerId: MyString
+  situation: 1
+
+two:
+  floor: 1
+  machineId: 1
+  userId: MyString
+  problemCategory: 1
+  problemDetail: MyString
+  date: 2016-03-23
+  comment: MyString
+  maintainerId: MyString
+  situation: 1

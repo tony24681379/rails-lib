@@ -1,0 +1,41 @@
+<h1>Listing dailies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Floor</th>
+      <th>Machineid</th>
+      <th>Userid</th>
+      <th>Problemcategory</th>
+      <th>Problemdetail</th>
+      <th>Date</th>
+      <th>Comment</th>
+      <th>Maintainerid</th>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dailies.each do |daily| %>
+      <tr>
+        <td><%= daily.floor %></td>
+        <td><%= daily.machineId %></td>
+        <td><%= daily.userId %></td>
+        <td><%= daily.problemCategory %></td>
+        <td><%= daily.problemDetail %></td>
+        <td><%= daily.date %></td>
+        <td><%= daily.comment %></td>
+        <td><%= daily.maintainerId %></td>
+        <td><%= daily.situation %></td>
+        <td><%= link_to 'Show', daily %></td>
+        <td><%= link_to 'Edit', edit_daily_path(daily) %></td>
+        <td><%= link_to 'Destroy', daily, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daily', new_daily_path %>
