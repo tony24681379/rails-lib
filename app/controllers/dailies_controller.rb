@@ -15,10 +15,12 @@ class DailiesController < ApplicationController
 
   def new
     @daily = Daily.new
+    @all_machines = Machine.order("machineId")
     respond_with(@daily)
   end
 
   def edit
+    @all_machines = Machine.order("machineId")
   end
 
   def create

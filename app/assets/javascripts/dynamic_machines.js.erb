@@ -1,0 +1,11 @@
+function get_machine(value) {
+  $.ajax({
+    type: "POST",
+    url: '/dynamic/getMachines/' + value,
+    data: 'text',
+    success: function (data) {
+      $("#machines").html(data);
+    }
+  }
+  )
+}

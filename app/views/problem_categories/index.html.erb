@@ -1,0 +1,24 @@
+<h1>問題分類</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Problem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @problem_categories.each do |problem_category| %>
+      <tr>
+        <td><%= problem_category.problem %></td>
+        <td><%= link_to 'Edit', edit_problem_category_path(problem_category) %></td>
+        <td><%= link_to 'Destroy', problem_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Problem category', new_problem_category_path %>

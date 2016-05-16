@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
+  resources :machines
+
+  resources :problem_categories
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

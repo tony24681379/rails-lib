@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+  <!--TODO: fix it-->
+<%= select_tag "floor", options_for_select(1..6), :onchange => "get_machine(this.value)" %>
+<%= select_tag "machines", options_from_collection_for_select(@all_machines,"id","machineId") %>
   <div class="field">
-    <%= f.label :floor %><br>
-    <%= f.number_field :floor %>
+    <%= f.label :machineFloor %><br>
+    <%= select_tag "floor", options_for_select(1..6), :onchange => "get_machine(this.value)" %>
+    <%= f.select :floor, options_for_select(1..6), :onchange => "get_machine(this.value)" %>
   </div>
-  <div class="field">
+  <div class="machines">
     <%= f.label :machineId %><br>
-    <%= f.number_field :machineId %>
+    <%= select_tag "machines", options_from_collection_for_select(@all_machines,"id","machineId") %>
+    <%= collection_select(:floor, :machineId, @all_machines, :id, :machineId) %>
   </div>
   <div class="field">
     <%= f.label :userId %><br>
