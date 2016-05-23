@@ -15,7 +15,7 @@
     <%= f.select :floor, options_for_select(1..6), {}, :onchange => "get_machine(this.value)" %>
   </div>
   <div class="field">
-    <%= f.label :machineI %><br>
+    <%= f.label :machineId %><br>
     <%= f.select :machineId, options_from_collection_for_select(@all_machines,"id","machineId") %>
   </div>
   <div class="field">
