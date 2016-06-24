@@ -5,11 +5,16 @@ class DailiesController < ApplicationController
   respond_to :html
 
   def index
-    @dailies = Daily.all
+    @dailies = Daily.joins("join machines m on dailies.machineid = m.id
+      join users u on dailies.userId = u.account") \
+      .select("dailies.*, m.machineId as machine_name, u.username")
     respond_with(@dailies)
   end
 
   def show
+    user_name = User.find_by(:account => @daily.userId)
+    @user_name = user_name.username
+    @machineId = Machine.find(@daily.machineId).machineId
     respond_with(@daily)
   end
 

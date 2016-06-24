@@ -32,22 +32,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # in to be expired now. This is useful if the user wants to
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+  def cancel
+    super
+  end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.for(:sign_up) << :account
     devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:sign_up) << :email
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) << :account
     devise_parameter_sanitizer.for(:account_update) << :username
+    devise_parameter_sanitizer.for(:account_update) << :email
   end
 
   # The path used after sign up.
