@@ -9,7 +9,7 @@ class MachinesController < ApplicationController
   end
 
   def show
-   respond_with(@machine)
+    respond_with(@machine)
   end
 
   def new
@@ -42,6 +42,6 @@ class MachinesController < ApplicationController
     end
 
     def machine_params
-      params.require(:machine).permit(:floor, :machineId)
+      params.require(:machine).permit(:place, :floor, :machine_name)
     end
 end

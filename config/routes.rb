@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
   resources :machines
 
+  post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
   resources :problem_categories
 
   devise_for :users, controllers: {

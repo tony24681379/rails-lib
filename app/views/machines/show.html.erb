@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Place:</strong>
+  <%= @machine.place %>
+</p>
+
+<p>
   <strong>Floor:</strong>
   <%= @machine.floor %>
 </p>
 
 <p>
-  <strong>Machineid:</strong>
-  <%= @machine.machineId %>
+  <strong>Machine name:</strong>
+  <%= @machine.machine_name %>
 </p>
 
 <%= link_to 'Edit', edit_machine_path(@machine) %> |

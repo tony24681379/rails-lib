@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  place: MyText
   floor: 1
-  machineId: MyText
+  machine_name: MyText
 
 two:
+  place: MyText
   floor: 1
-  machineId: MyText
+  machine_name: MyText

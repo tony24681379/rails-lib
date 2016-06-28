@@ -7,25 +7,25 @@ class DailiesController < ApplicationController
   def index
     @dailies = Daily.joins("join machines m on dailies.machineid = m.id
       join users u on dailies.userId = u.account") \
-      .select("dailies.*, m.machineId as machine_name, u.username")
+      .select("dailies.*, m.machine_name as machine_name, u.username")
     respond_with(@dailies)
   end
 
   def show
     user_name = User.find_by(:account => @daily.userId)
     @user_name = user_name.username
-    @machineId = Machine.find(@daily.machineId).machineId
+    @machineId = Machine.find(@daily.machineId).machine_name
     respond_with(@daily)
   end
 
   def new
     @daily = Daily.new
-    @all_machines = Machine.order("machineId")
+    @all_machines = Machine.order("machine_name")
     respond_with(@daily)
   end
 
   def edit
-    @all_machines = Machine.order("machineId")
+    @all_machines = Machine.order("machine_name")
   end
 
   def create

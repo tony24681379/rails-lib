@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425030905) do
+ActiveRecord::Schema.define(version: 20160627032439) do
 
   create_table "dailies", force: true do |t|
     t.integer  "floor"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(version: 20160425030905) do
   end
 
   create_table "machines", force: true do |t|
+    t.text     "place"
     t.integer  "floor"
-    t.text     "machineId"
+    t.text     "machine_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160425030905) do
     t.datetime "updated_at",                          null: false
     t.string   "username"
     t.string   "account"
+    t.integer  "extension_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
