@@ -1,0 +1,53 @@
+<%= form_for(@daily_problem) do |f| %>
+  <% if @daily_problem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_problem.errors.count, "error") %> prohibited this daily_problem from being saved:</h2>
+
+      <ul>
+      <% @daily_problem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+   <div class="field">
+    <%= label_tag 'machineFloor' %><br>
+    <%= select_tag 'floor', options_for_select(1..6), :onchange => "get_machine(this.value)" %>
+  </div>
+  <div class="field">
+    <%= f.label :machine_id %><br>
+    <%= f.select :machine_id, options_from_collection_for_select(@all_machines,"id","machine_name") %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :problem_category %><br>
+    <%= f.number_field :problem_category %>
+  </div>
+  <div class="field">
+    <%= f.label :problem_detail %><br>
+    <%= f.text_field :problem_detail %>
+  </div>
+  <div class="field">
+    <%= f.label :maintainer_id %><br>
+    <%= f.text_field :maintainer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :situation %><br>
+    <%= f.number_field :situation %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

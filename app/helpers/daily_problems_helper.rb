@@ -1,0 +1,2 @@
+module DailyProblemsHelper
+end

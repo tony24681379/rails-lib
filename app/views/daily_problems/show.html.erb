@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @daily_problem.date %>
+</p>
+
+<p>
+  <strong>Machine:</strong>
+  <%= @daily_problem.machine_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_name %>
+</p>
+
+<p>
+  <strong>Problem category:</strong>
+  <%= @daily_problem.problem_category %>
+</p>
+
+<p>
+  <strong>Problem detail:</strong>
+  <%= @daily_problem.problem_detail %>
+</p>
+
+<p>
+  <strong>Maintainer:</strong>
+  <%= @daily_problem.maintainer_id %>
+</p>
+
+<p>
+  <strong>Situation:</strong>
+  <%= @daily_problem.situation %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @daily_problem.comment %>
+</p>
+
+<%= link_to 'Edit', edit_daily_problem_path(@daily_problem) %> |
+<%= link_to 'Back', daily_problems_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627032439) do
+ActiveRecord::Schema.define(version: 20160629024855) do
 
   create_table "dailies", force: true do |t|
     t.integer  "floor"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20160627032439) do
     t.string   "comment"
     t.string   "maintainerId"
     t.integer  "situation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "daily_problems", force: true do |t|
+    t.date     "date"
+    t.integer  "machine_id"
+    t.string   "user_id"
+    t.integer  "problem_category"
+    t.string   "problem_detail"
+    t.string   "maintainer_id"
+    t.integer  "situation"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

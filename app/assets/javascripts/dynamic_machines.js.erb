@@ -4,7 +4,7 @@ function get_machine(value) {
     url: '/dynamic/getMachines/' + value,
     data: 'text',
     success: function (data) {
-      $("#daily_machineId").html(data);
+      $("#daily_problem_machine_id").html(data);
     }
   }
   )

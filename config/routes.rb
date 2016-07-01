@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :daily_problems
+
   resources :machines
 
   post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
@@ -9,13 +11,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :dailies
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dailies#index'
+  root 'daily_problems#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

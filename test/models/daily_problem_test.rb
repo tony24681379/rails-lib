@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DailyTest < ActiveSupport::TestCase
+class DailyProblemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

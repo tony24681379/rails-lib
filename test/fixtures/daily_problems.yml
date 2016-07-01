@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-06-29
+  machine_id: 1
+  user_id: MyString
+  problem_category: 1
+  problem_detail: MyString
+  maintainer_id: MyString
+  situation: 1
+  comment: MyString
+
+two:
+  date: 2016-06-29
+  machine_id: 1
+  user_id: MyString
+  problem_category: 1
+  problem_detail: MyString
+  maintainer_id: MyString
+  situation: 1
+  comment: MyString
