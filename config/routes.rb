@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dailies
+
   resources :daily_problems
 
   resources :machines

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @daily.date %>
+</p>
+
+<p>
+  <strong>Machine:</strong>
+  <%= @daily.machine_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @daily.state %>
+</p>
+
+<%= link_to 'Edit', edit_daily_path(@daily) %> |
+<%= link_to 'Back', dailies_path %>

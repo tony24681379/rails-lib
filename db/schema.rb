@@ -11,18 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629024855) do
+ActiveRecord::Schema.define(version: 20160701035020) do
 
   create_table "dailies", force: true do |t|
-    t.integer  "floor"
-    t.integer  "machineId"
-    t.string   "userId"
-    t.integer  "problemCategory"
-    t.string   "problemDetail"
     t.date     "date"
-    t.string   "comment"
-    t.string   "maintainerId"
-    t.integer  "situation"
+    t.integer  "machine_id"
+    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
