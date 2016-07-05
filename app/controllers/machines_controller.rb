@@ -23,7 +23,7 @@ class MachinesController < ApplicationController
   def create
     @machine = Machine.new(machine_params)
     @machine.save
-    redirect_to :action => 'index'
+    respond_with(@machine)
   end
 
   def update
@@ -42,6 +42,6 @@ class MachinesController < ApplicationController
     end
 
     def machine_params
-      params.require(:machine).permit(:place, :floor, :machine_name)
+      params.require(:machine).permit(:place, :group, :floor, :machine_name)
     end
 end

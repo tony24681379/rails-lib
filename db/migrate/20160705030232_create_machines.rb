@@ -1,9 +1,10 @@
 class CreateMachines < ActiveRecord::Migration
   def change
     create_table :machines do |t|
-      t.text :place
+      t.string :place
+      t.string :group
       t.integer :floor
-      t.text :machine_name
+      t.string :machine_name
 
       t.timestamps
     end

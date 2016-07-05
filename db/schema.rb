@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701035020) do
+ActiveRecord::Schema.define(version: 20160705030232) do
 
   create_table "dailies", force: true do |t|
     t.date     "date"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20160701035020) do
   end
 
   create_table "machines", force: true do |t|
-    t.text     "place"
+    t.string   "place"
+    t.string   "group"
     t.integer  "floor"
-    t.text     "machine_name"
+    t.string   "machine_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

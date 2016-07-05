@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :machines
+
   resources :dailies
 
   resources :daily_problems
-
-  resources :machines
 
   post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
   resources :problem_categories

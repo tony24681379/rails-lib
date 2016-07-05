@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Place</th>
+      <th>Group</th>
       <th>Floor</th>
       <th>Machine name</th>
       <th colspan="3"></th>
@@ -14,8 +15,10 @@
     <% @machines.each do |machine| %>
       <tr>
         <td><%= machine.place %></td>
+        <td><%= machine.group %></td>
         <td><%= machine.floor %></td>
         <td><%= machine.machine_name %></td>
+        <td><%= link_to 'Show', machine %></td>
         <td><%= link_to 'Edit', edit_machine_path(machine) %></td>
         <td><%= link_to 'Destroy', machine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

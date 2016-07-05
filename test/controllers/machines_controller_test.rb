@@ -18,7 +18,7 @@ class MachinesControllerTest < ActionController::TestCase
 
   test "should create machine" do
     assert_difference('Machine.count') do
-      post :create, machine: { floor: @machine.floor, machine_name: @machine.machine_name, place: @machine.place }
+      post :create, machine: { floor: @machine.floor, group: @machine.group, machine_name: @machine.machine_name, place: @machine.place }
     end
 
     assert_redirected_to machine_path(assigns(:machine))
@@ -35,7 +35,7 @@ class MachinesControllerTest < ActionController::TestCase
   end
 
   test "should update machine" do
-    patch :update, id: @machine, machine: { floor: @machine.floor, machine_name: @machine.machine_name, place: @machine.place }
+    patch :update, id: @machine, machine: { floor: @machine.floor, group: @machine.group, machine_name: @machine.machine_name, place: @machine.place }
     assert_redirected_to machine_path(assigns(:machine))
   end
 

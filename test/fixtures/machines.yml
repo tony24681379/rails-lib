@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  place: MyText
+  place: MyString
+  group: MyString
   floor: 1
-  machine_name: MyText
+  machine_name: MyString
 
 two:
-  place: MyText
+  place: MyString
+  group: MyString
   floor: 1
-  machine_name: MyText
+  machine_name: MyString
