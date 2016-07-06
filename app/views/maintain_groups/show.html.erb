@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @maintain_group.group %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @maintain_group.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_maintain_group_path(@maintain_group) %> |
+<%= link_to 'Back', maintain_groups_path %>

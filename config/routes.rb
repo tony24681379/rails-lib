@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :maintain_groups, param: :group
+
   resources :machines
 
   resources :dailies
@@ -6,8 +8,6 @@ Rails.application.routes.draw do
   resources :daily_problems
 
   post 'dynamic/getMachines/:id' => 'dynamic#getMachines'
-  resources :problem_categories
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

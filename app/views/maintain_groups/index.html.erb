@@ -1,0 +1,27 @@
+<h1>Listing maintain_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maintain_groups.each do |maintain_group| %>
+      <tr>
+        <td><%= maintain_group.group %></td>
+        <td><%= maintain_group.user_id %></td>
+        <td><%= link_to 'Show', maintain_group %></td>
+        <td><%= link_to 'Edit', edit_maintain_group_path(maintain_group) %></td>
+        <td><%= link_to 'Destroy', maintain_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Maintain group', new_maintain_group_path %>
