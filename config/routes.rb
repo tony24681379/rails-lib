@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :maintain_groups, param: :group
+  resources :machines, param: :machine_id
 
-  resources :machines
+  resources :maintain_groups, param: :group
 
   resources :dailies
 

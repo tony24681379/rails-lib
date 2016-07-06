@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Branch:</strong>
+  <%= @machine.branch %>
+</p>
+
+<p>
   <strong>Place:</strong>
   <%= @machine.place %>
 </p>
 
 <p>
-  <strong>Group:</strong>
-  <%= @machine.group %>
+  <strong>Maintain group:</strong>
+  <%= @machine.maintain_group_id %>
 </p>
 
 <p>
@@ -16,8 +21,8 @@
 </p>
 
 <p>
-  <strong>Machine name:</strong>
-  <%= @machine.machine_name %>
+  <strong>Machine:</strong>
+  <%= @machine.machine_id %>
 </p>
 
 <%= link_to 'Edit', edit_machine_path(@machine) %> |

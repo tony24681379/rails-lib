@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  branch: MyString
   place: MyString
-  group: MyString
+  maintain_group: MyString
   floor: 1
-  machine_name: MyString
+  machine_id: MyString
 
 two:
+  branch: MyString
   place: MyString
-  group: MyString
+  maintain_group: MyString
   floor: 1
-  machine_name: MyString
+  machine_id: MyString

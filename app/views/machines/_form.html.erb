@@ -12,20 +12,24 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :branch %><br>
+    <%= f.text_field :branch %>
+  </div>
+  <div class="field">
     <%= f.label :place %><br>
     <%= f.text_field :place %>
   </div>
   <div class="field">
-    <%= f.label :group %><br>
-    <%= f.text_field :group %>
+    <%= f.label :maintain_group_id %><br>
+    <%= f.text_field :maintain_group_id %>
   </div>
   <div class="field">
     <%= f.label :floor %><br>
     <%= f.number_field :floor %>
   </div>
   <div class="field">
-    <%= f.label :machine_name %><br>
-    <%= f.text_field :machine_name %>
+    <%= f.label :machine_id %><br>
+    <%= f.text_field :machine_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

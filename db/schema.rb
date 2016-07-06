@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706035523) do
+ActiveRecord::Schema.define(version: 20160706041211) do
 
   create_table "dailies", force: true do |t|
     t.date     "date"
@@ -34,14 +34,17 @@ ActiveRecord::Schema.define(version: 20160706035523) do
     t.datetime "updated_at"
   end
 
-  create_table "machines", force: true do |t|
-    t.string   "place"
-    t.string   "group"
-    t.integer  "floor"
-    t.string   "machine_name"
+  create_table "machines", id: false, force: true do |t|
+    t.string   "branch",            null: false
+    t.string   "place",             null: false
+    t.string   "maintain_group_id", null: false
+    t.integer  "floor",             null: false
+    t.string   "machine_id",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "machines", ["machine_id"], name: "index_machines_on_machine_id", unique: true
 
   create_table "maintain_groups", id: false, force: true do |t|
     t.text     "group",      null: false

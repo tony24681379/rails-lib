@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-ProblemCategory.create(problem:'Kiosk 查詢平台')
+ProblemCategory.create(problem:'Kiosk查詢平台')
 ProblemCategory.create(problem:'非靠卡電腦')
 ProblemCategory.create(problem:'一般靠卡電腦')
 ProblemCategory.create(problem:'預約靠卡電腦')
