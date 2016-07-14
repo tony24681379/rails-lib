@@ -18,7 +18,7 @@ class DailyProblemsControllerTest < ActionController::TestCase
 
   test "should create daily_problem" do
     assert_difference('DailyProblem.count') do
-      post :create, daily_problem: { comment: @daily_problem.comment, date: @daily_problem.date, machine_id: @daily_problem.machine_id, maintainer_id: @daily_problem.maintainer_id, problem_category: @daily_problem.problem_category, problem_detail: @daily_problem.problem_detail, situation: @daily_problem.situation, user_id: @daily_problem.user_id }
+      post :create, daily_problem: { comment: @daily_problem.comment, date: @daily_problem.date, machine_id: @daily_problem.machine_id, maintainer_id: @daily_problem.maintainer_id, problem_detail: @daily_problem.problem_detail, situation: @daily_problem.situation, user_id: @daily_problem.user_id }
     end
 
     assert_redirected_to daily_problem_path(assigns(:daily_problem))
@@ -35,7 +35,7 @@ class DailyProblemsControllerTest < ActionController::TestCase
   end
 
   test "should update daily_problem" do
-    patch :update, id: @daily_problem, daily_problem: { comment: @daily_problem.comment, date: @daily_problem.date, machine_id: @daily_problem.machine_id, maintainer_id: @daily_problem.maintainer_id, problem_category: @daily_problem.problem_category, problem_detail: @daily_problem.problem_detail, situation: @daily_problem.situation, user_id: @daily_problem.user_id }
+    patch :update, id: @daily_problem, daily_problem: { comment: @daily_problem.comment, date: @daily_problem.date, machine_id: @daily_problem.machine_id, maintainer_id: @daily_problem.maintainer_id, problem_detail: @daily_problem.problem_detail, situation: @daily_problem.situation, user_id: @daily_problem.user_id }
     assert_redirected_to daily_problem_path(assigns(:daily_problem))
   end
 

@@ -15,33 +15,33 @@
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
-   <div class="field">
-    <%= label_tag 'machineFloor' %><br>
-    <%= select_tag 'floor', options_for_select(1..6), :onchange => "get_machine(this.value)" %>
+  <div class="field">
+    <%= label_tag 'branch' %><br>
+    <%= select_tag 'branch', options_from_collection_for_select(@libaries, "branch", "branch"), :onchange => "get_floor(this.value)" %>
+  </div>
+  <div class="field">
+    <%= f.label 'floor' %><br>
+    <%= select_tag 'floor', options_from_collection_for_select(@floor, "floor", "floor"), :onchange => "get_machine(this.value)" %>
   </div>
   <div class="field">
     <%= f.label :machine_id %><br>
-    <%= f.select :machine_id, options_from_collection_for_select(@all_machines,"id","machine_name") %>
+    <%= f.select :machine_id, options_from_collection_for_select(@all_machines,"machine_id","machine_id") %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :problem_category %><br>
-    <%= f.number_field :problem_category %>
-  </div>
-  <div class="field">
     <%= f.label :problem_detail %><br>
     <%= f.text_field :problem_detail %>
   </div>
   <div class="field">
-    <%= f.label :maintainer_id %><br>
-    <%= f.text_field :maintainer_id %>
-  </div>
-  <div class="field">
     <%= f.label :situation %><br>
     <%= f.number_field :situation %>
+  </div>
+  <div class="field">
+    <%= f.label :maintainer_id %><br>
+    <%= f.text_field :maintainer_id %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>

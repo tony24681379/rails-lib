@@ -6,6 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+Library.create(branch:'總圖', floor:1)
+Library.create(branch:'總圖', floor:2)
+Library.create(branch:'總圖', floor:3)
+Library.create(branch:'總圖', floor:4)
+Library.create(branch:'總圖', floor:5)
+Library.create(branch:'總圖', floor:6)
+Library.create(branch:'人社', floor:1)
+Library.create(branch:'人社', floor:2)
+
 MaintainGroup.create(group:'Kiosk查詢平台')
 MaintainGroup.create(group:'非靠卡電腦')
 MaintainGroup.create(group:'一般靠卡電腦')
@@ -169,4 +180,3 @@ Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'�
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F18')
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F19')
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F縮')
-

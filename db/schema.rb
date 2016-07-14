@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711045134) do
+ActiveRecord::Schema.define(version: 20160714164644) do
 
-  create_table "dailies", force: true do |t|
+  create_table "dailies", force: :cascade do |t|
     t.date     "date"
     t.integer  "machine_id"
     t.integer  "state"
@@ -21,61 +21,67 @@ ActiveRecord::Schema.define(version: 20160711045134) do
     t.datetime "updated_at"
   end
 
-  create_table "daily_problems", force: true do |t|
+  create_table "daily_problems", force: :cascade do |t|
     t.date     "date"
-    t.integer  "machine_id"
+    t.string   "machine_id"
     t.string   "user_id"
-    t.integer  "problem_category"
     t.string   "problem_detail"
-    t.string   "maintainer_id"
     t.integer  "situation"
+    t.string   "maintainer_id"
     t.string   "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  create_table "machines", id: false, force: true do |t|
-    t.string   "branch",         null: false
-    t.string   "place",          null: false
-    t.string   "maintain_group", null: false
-    t.integer  "floor",          null: false
-    t.string   "machine_id",     null: false
+  create_table "libraries", force: :cascade do |t|
+    t.string   "branch"
+    t.integer  "floor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "machines", id: false, force: :cascade do |t|
+    t.string   "branch",         limit: 255, null: false
+    t.string   "place",          limit: 255, null: false
+    t.string   "maintain_group", limit: 255, null: false
+    t.integer  "floor",                      null: false
+    t.string   "machine_id",     limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "machines", ["machine_id"], name: "index_machines_on_machine_id", unique: true
 
-  create_table "maintain_groups", id: false, force: true do |t|
-    t.text     "group",      null: false
-    t.string   "user_id"
+  create_table "maintain_groups", id: false, force: :cascade do |t|
+    t.text     "group",                  null: false
+    t.string   "user_id",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "maintain_groups", ["group"], name: "index_maintain_groups_on_group", unique: true
 
-  create_table "problem_categories", force: true do |t|
+  create_table "problem_categories", force: :cascade do |t|
     t.text     "problem"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.string   "account"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 255
+    t.string   "account",                limit: 255
     t.integer  "extension_number"
   end
 

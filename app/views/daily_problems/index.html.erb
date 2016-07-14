@@ -1,15 +1,18 @@
-<h1>Listing daily_problems</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Daily Problems</h1>
 
 <table>
   <thead>
     <tr>
       <th>Date</th>
+      <th>Branch</th>
+      <th>Floor</th>
       <th>Machine</th>
       <th>User</th>
-      <th>Problem category</th>
       <th>Problem detail</th>
-      <th>Maintainer</th>
       <th>Situation</th>
+      <th>Maintainer</th>
       <th>Comment</th>
       <th colspan="3"></th>
     </tr>
@@ -19,12 +22,13 @@
     <% @daily_problems.each do |daily_problem| %>
       <tr>
         <td><%= daily_problem.date %></td>
-        <td><%= daily_problem.machine_name %></td>
-        <td><%= daily_problem.user_id %></td>
-        <td><%= daily_problem.problem_category %></td>
+        <td><%= daily_problem.branch %></td>
+        <td><%= daily_problem.floor %></td>
+        <td><%= daily_problem.machine_id %></td>
+        <td><%= daily_problem.username %></td>
         <td><%= daily_problem.problem_detail %></td>
-        <td><%= daily_problem.maintainer_id %></td>
         <td><%= daily_problem.situation %></td>
+        <td><%= daily_problem.maintainer_id %></td>
         <td><%= daily_problem.comment %></td>
         <td><%= link_to 'Show', daily_problem %></td>
         <td><%= link_to 'Edit', edit_daily_problem_path(daily_problem) %></td>

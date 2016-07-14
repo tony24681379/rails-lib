@@ -1,21 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2016-06-29
-  machine_id: 1
+  date: 2016-07-14
+  machine_id: MyString
   user_id: MyString
-  problem_category: 1
   problem_detail: MyString
-  maintainer_id: MyString
   situation: 1
+  maintainer_id: MyString
   comment: MyString
 
 two:
-  date: 2016-06-29
-  machine_id: 1
+  date: 2016-07-14
+  machine_id: MyString
   user_id: MyString
-  problem_category: 1
   problem_detail: MyString
-  maintainer_id: MyString
   situation: 1
+  maintainer_id: MyString
   comment: MyString
