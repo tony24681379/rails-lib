@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :daily_problems
 
   resources :libraries
 
@@ -9,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :dailies
 
-  post 'daily_problems/get_machines/:id' => 'daily_problems#get_machines'
+  resources :daily_problems
+
+  post 'daily_problems/get_floors/:id' => 'daily_problems#get_floors'
+  post 'daily_problems/get_machines/:branch/:floor' => 'daily_problems#get_machines'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

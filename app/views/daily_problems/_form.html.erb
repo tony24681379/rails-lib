@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label 'floor' %><br>
-    <%= select_tag 'floor', options_from_collection_for_select(@floor, "floor", "floor"), :onchange => "get_machine(this.value)" %>
+    <%= select_tag 'floor', options_from_collection_for_select(@floor, "floor", "floor"), :onchange => "get_machine(branch.value,floor.value)" %>
   </div>
   <div class="field">
     <%= f.label :machine_id %><br>

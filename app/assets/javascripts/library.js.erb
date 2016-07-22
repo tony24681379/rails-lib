@@ -1,19 +1,19 @@
 function get_floor(value) {
   $.ajax({
     type: "POST",
-    url: '/dynamic/get_floors/' + value,
+    url: '/daily_problems/get_floors/' + value,
     data: 'text',
     success: function (data) {
-      $("#floor_label").html(data);
+      $("#floor").html(data);
     }
   }
   )
 }
 
-function get_machine(value) {
+function get_machine(branch, floor) {
   $.ajax({
     type: "POST",
-    url: '/daily_problems/get_machines/' + value,
+    url: '/daily_problems/get_machines/' + branch +'/'+ floor,
     data: 'text',
     success: function (data) {
       $("#daily_problem_machine_id").html(data);

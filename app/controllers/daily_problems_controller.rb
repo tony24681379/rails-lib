@@ -85,7 +85,7 @@ class DailyProblemsController < ApplicationController
   
   def get_machines
     options = ""
-    machine = Machine.where("floor = ?", params[:id])
+    machine = Machine.where("branch = ? and floor = ?", params[:branch], params[:floor])
     machine.each do |s|
       options << "<option value=#{s.id}>#{s.machine_id}</option>"
     end
