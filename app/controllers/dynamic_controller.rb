@@ -1,2 +1,0 @@
-class DynamicController < ApplicationController
-end
