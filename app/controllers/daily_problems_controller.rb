@@ -75,7 +75,7 @@ class DailyProblemsController < ApplicationController
 
   def get_floors
     options = ""
-    library = Library.where("branch = ?", params[:id])
+    library = Library.where("branch = ?", params[:branch])
     library.each do |s|
       options << "<option value=#{s.floor}>#{s.floor}</option>"
     end

@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= label_tag 'branch' %><br>
-    <%= select_tag 'branch', options_from_collection_for_select(@libaries, "branch", "branch"), :onchange => "get_floor(this.value)" %>
+    <%= select_tag 'branch', options_from_collection_for_select(@libaries, "branch", "branch"), :onchange => "get_floor(branch.value,floor.value)" %>
   </div>
   <div class="field">
     <%= f.label 'floor' %><br>

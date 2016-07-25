@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :daily_problems
 
-  post 'daily_problems/get_floors/:id' => 'daily_problems#get_floors'
+  post 'daily_problems/get_floors/:branch' => 'daily_problems#get_floors'
   post 'daily_problems/get_machines/:branch/:floor' => 'daily_problems#get_machines'
 
   devise_for :users, controllers: {

@@ -1,10 +1,19 @@
-function get_floor(value) {
+function get_floor(branch, floor) {
   $.ajax({
     type: "POST",
-    url: '/daily_problems/get_floors/' + value,
+    url: '/daily_problems/get_floors/' + branch,
     data: 'text',
     success: function (data) {
       $("#floor").html(data);
+    }
+  }
+  )
+  $.ajax({
+    type: "POST",
+    url: '/daily_problems/get_machines/' + branch +'/'+ floor,
+    data: 'text',
+    success: function (data) {
+      $("#daily_problem_machine_id").html(data);
     }
   }
   )
