@@ -1,5 +1,4 @@
 class DailyProblemsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_daily_problem, only: [:show, :edit, :update, :destroy]
 
   # GET /daily_problems
