@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714164644) do
+ActiveRecord::Schema.define(version: 20160727043022) do
 
   create_table "dailies", force: :cascade do |t|
     t.date     "date"
@@ -61,10 +61,22 @@ ActiveRecord::Schema.define(version: 20160714164644) do
 
   add_index "maintain_groups", ["group"], name: "index_maintain_groups_on_group", unique: true
 
+  create_table "maintain_states", force: :cascade do |t|
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "problem_categories", force: :cascade do |t|
     t.text     "problem"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "user_states", force: :cascade do |t|
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

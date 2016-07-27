@@ -1,3 +1,4 @@
+# encoding: utf-8
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -11,6 +12,7 @@ default: &default
 
 development:
   <<: *default
+  encoding: utf8
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and

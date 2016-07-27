@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :maintain_states
+
+  resources :user_states
+
   resources :libraries
 
   resources :machines, param: :machine_id

@@ -6,7 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+UserState.create(id:0, state:'未紀錄')
+UserState.create(id:1, state:'使用中')
+UserState.create(id:2, state:'良好')
+UserState.create(id:3, state:'問題排除')
+UserState.create(id:4, state:'通知人員')
+UserState.create(id:5, state:'其他')
 
+MaintainState.create(id:0, state:'未接收')
+MaintainState.create(id:1, state:'待處理')
+MaintainState.create(id:2, state:'處理中')
+MaintainState.create(id:3, state:'已完成')
 
 Library.create(branch:'總圖', floor:1)
 Library.create(branch:'總圖', floor:2)
