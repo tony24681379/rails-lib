@@ -28,24 +28,12 @@
     <%= f.select :machine_id, options_from_collection_for_select(@all_machines,"machine_id","machine_id") %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :problem_detail %><br>
     <%= f.text_field :problem_detail %>
   </div>
   <div class="field">
     <%= f.label :situation %><br>
     <%= f.number_field :situation %>
-  </div>
-  <div class="field">
-    <%= f.label :maintainer_id %><br>
-    <%= f.text_field :maintainer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
   </div>
   <div class="actions">
     <%= f.submit %>

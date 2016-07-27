@@ -23,7 +23,6 @@ class DailyProblemsController < ApplicationController
     @libaries = Library.select('branch').distinct
     @floor = Machine.select('floor').distinct
     @all_machines = Machine.order("machine_id")
-    @floor_label = ""
   end
 
   # GET /daily_problems/1/edit
@@ -37,7 +36,7 @@ class DailyProblemsController < ApplicationController
   # POST /daily_problems.json
   def create
     @daily_problem = DailyProblem.new(daily_problem_params)
-
+    @daily_problem.user_id = current_user.account
     respond_to do |format|
       if @daily_problem.save
         format.html { redirect_to :action => 'index', notice: 'Daily problem was successfully created.' }
@@ -52,6 +51,7 @@ class DailyProblemsController < ApplicationController
   # PATCH/PUT /daily_problems/1
   # PATCH/PUT /daily_problems/1.json
   def update
+    @daily_problem.user_id = current_user.account
     respond_to do |format|
       if @daily_problem.update(daily_problem_params)
         format.html { redirect_to @daily_problem, notice: 'Daily problem was successfully updated.' }

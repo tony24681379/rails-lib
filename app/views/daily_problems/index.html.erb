@@ -2,7 +2,7 @@
 
 <h1>Listing Daily Problems</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Date</th>
@@ -30,9 +30,9 @@
         <td><%= daily_problem.situation %></td>
         <td><%= daily_problem.maintainer_id %></td>
         <td><%= daily_problem.comment %></td>
-        <td><%= link_to 'Show', daily_problem %></td>
-        <td><%= link_to 'Edit', edit_daily_problem_path(daily_problem) %></td>
-        <td><%= link_to 'Destroy', daily_problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to('Show', daily_problem, :class => 'btn btn-link', :method => :get) %></td>
+        <td><%= button_to('Edit', edit_daily_problem_path(daily_problem), :class => 'btn btn-link', :method => :get) %></td>
+        <td><%= button_to('Destroy', daily_problem, :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' }) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Daily problem', new_daily_problem_path %>
+<%= button_to('New Daily problem', new_daily_problem_path, :class => 'btn btn-default btn-primary', :method => :get)  %>
