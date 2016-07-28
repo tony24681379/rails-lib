@@ -1,12 +1,12 @@
 FROM debian:jessie
 
 COPY sources.list /etc/apt
-RUN apt-get update && apt-get install -y --no-install-recommends build-essential git vim ruby-dev libsqlite3-dev zlib1g-dev rails
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential git vim ruby-dev libsqlite3-dev zlib1g-dev rails && apt-get autoclean && rm -rf /var/lib/apt/lists/*
 
-#RUN useradd -ms /bin/bash rails
-#RUN adduser rails sudo
-#ENV HOME /home/rails
+RUN git clone https://github.com/tony24681379/rails-lib && cd /rails-lib && bundle && rake db:migrate
 
-#USER rails
 EXPOSE 3000
 WORKDIR /rails-lib
+#CMD ["rails","s"]
+
+#docker run -it -p 3000:3000 --name rails-server -v $(pwd):/rails-lib rails-lib bash
