@@ -55,6 +55,8 @@ zh-TW:
     sessions:
       new:
         sign_in: "登入"
+      user:
+        signed_in: "登入成功"
     shared:
       links:
         back: "返回"
