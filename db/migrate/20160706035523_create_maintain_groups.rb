@@ -1,7 +1,7 @@
 class CreateMaintainGroups < ActiveRecord::Migration
   def change
     create_table :maintain_groups, id: false do |t|
-      t.text :group, null: false
+      t.string :group, null: false
       t.string :user_id
 
       t.timestamps

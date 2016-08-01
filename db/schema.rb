@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160727043022) do
   add_index "machines", ["machine_id"], name: "index_machines_on_machine_id", unique: true
 
   create_table "maintain_groups", id: false, force: :cascade do |t|
-    t.text     "group",                  null: false
+    t.string   "group",                  null: false
     t.string   "user_id",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
