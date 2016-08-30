@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+# Use mysql as the database for Active Record
+gem 'mysql2', "~> 0.3.20"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -43,4 +45,8 @@ gem 'devise-i18n-views'
 gem 'composite_primary_keys', '~> 8.1', '>= 8.1.3'
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.3.4'
-gem 'mysql2', '~> 0.3.18'
+
+#graphs
+gem 'chartkick'
+#popular
+gem 'hightop'
