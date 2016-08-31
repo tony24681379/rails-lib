@@ -15,68 +15,62 @@ ActiveRecord::Schema.define(version: 20160727043022) do
 
   create_table "dailies", force: :cascade do |t|
     t.date     "date"
-    t.integer  "machine_id"
-    t.integer  "state"
+    t.integer  "machine_id", limit: 4
+    t.integer  "state",      limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "daily_problems", force: :cascade do |t|
     t.date     "date"
-    t.string   "machine_id"
-    t.string   "user_id"
-    t.string   "problem_detail"
-    t.integer  "situation"
-    t.string   "maintainer_id"
-    t.string   "comment"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "machine_id",     limit: 255
+    t.string   "user_id",        limit: 255
+    t.string   "problem_detail", limit: 255
+    t.integer  "situation",      limit: 4
+    t.string   "maintainer_id",  limit: 255
+    t.string   "comment",        limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "libraries", force: :cascade do |t|
-    t.string   "branch"
-    t.integer  "floor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "branch",     limit: 255
+    t.integer  "floor",      limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "machines", id: false, force: :cascade do |t|
     t.string   "branch",         limit: 255, null: false
     t.string   "place",          limit: 255, null: false
     t.string   "maintain_group", limit: 255, null: false
-    t.integer  "floor",                      null: false
+    t.integer  "floor",          limit: 4,   null: false
     t.string   "machine_id",     limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "machines", ["machine_id"], name: "index_machines_on_machine_id", unique: true
+  add_index "machines", ["machine_id"], name: "index_machines_on_machine_id", unique: true, using: :btree
 
   create_table "maintain_groups", id: false, force: :cascade do |t|
-    t.string   "group",                  null: false
+    t.string   "group",      limit: 255, null: false
     t.string   "user_id",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "maintain_groups", ["group"], name: "index_maintain_groups_on_group", unique: true
+  add_index "maintain_groups", ["group"], name: "index_maintain_groups_on_group", unique: true, using: :btree
 
   create_table "maintain_states", force: :cascade do |t|
-    t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "problem_categories", force: :cascade do |t|
-    t.text     "problem"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "state",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "user_states", force: :cascade do |t|
-    t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,7 +79,7 @@ ActiveRecord::Schema.define(version: 20160727043022) do
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -94,10 +88,10 @@ ActiveRecord::Schema.define(version: 20160727043022) do
     t.datetime "updated_at",                                      null: false
     t.string   "username",               limit: 255
     t.string   "account",                limit: 255
-    t.integer  "extension_number"
+    t.integer  "extension_number",       limit: 4
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -8,6 +8,8 @@ class DailyProblemsController < ApplicationController
       join machines m on daily_problems.machine_id = m.machine_id
       join users u on daily_problems.user_id = u.account") \
       .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+    # test for chart
+    @dailys = DailyProblem.all
   end
 
   # GET /daily_problems/1
