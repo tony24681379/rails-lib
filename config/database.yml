@@ -2,22 +2,22 @@ development:
   adapter: mysql2
   encoding: utf8
   database: demo_development
-  host: 0.0.0.0
-  username: peter3846
+  host: 
+  username: 
   password:
 
 test:
   adapter: mysql2
   encoding: utf8
   database: demo_test
-  host: localhost
-  username: root
+  host: 
+  username: 
   password:
 
 production:
   adapter: mysql2
   encoding: utf8
   database: demo_production
-  host: localhost
-  username: root
+  host: 
+  username: 
   password:
