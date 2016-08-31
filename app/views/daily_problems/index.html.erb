@@ -42,6 +42,7 @@
 
 <br>
 <br>
-<br>
 
 <%= bar_chart @dailys.group(:machine_id).count %>
+
+<%= line_chart @dailys.group(:machine_id).group_by_day(:date).count %>

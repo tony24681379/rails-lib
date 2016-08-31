@@ -50,3 +50,5 @@ gem 'bootstrap-generators', '~> 3.3.4'
 gem 'chartkick'
 #popular
 gem 'hightop'
+#group by date
+gem 'groupdate'
