@@ -1,0 +1,7 @@
+docker rm -f php-lib
+
+docker rmi php-lib
+
+docker build -t php-lib .
+
+docker run -d -p 3333:80 --name php-lib php-lib
