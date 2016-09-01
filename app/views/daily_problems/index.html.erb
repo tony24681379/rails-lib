@@ -39,3 +39,10 @@
 <br>
 
 <%= button_to('New Daily problem', new_daily_problem_path, :class => 'btn btn-default btn-primary', :method => :get)  %>
+
+<br>
+<br>
+
+<%= bar_chart @dailys.group(:machine_id).count %>
+
+<%= line_chart @dailys.group(:machine_id).group_by_day(:date).count %>

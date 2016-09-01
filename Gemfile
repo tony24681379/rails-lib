@@ -45,8 +45,9 @@ gem 'devise-i18n-views'
 gem 'composite_primary_keys', '~> 8.1', '>= 8.1.3'
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.3.4'
-
 #graphs
 gem 'chartkick'
 #popular
 gem 'hightop'
+#group by date
+gem 'groupdate'
