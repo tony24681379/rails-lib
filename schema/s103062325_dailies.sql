@@ -25,17 +25,13 @@ DROP TABLE IF EXISTS `dailies`;
 CREATE TABLE `dailies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date DEFAULT NULL,
-  `machine_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `state` int(11) DEFAULT '0',
+  `machine_id` varchar(255) DEFAULT NULL,
+  `state` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `user_id` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `dailies_search_index_for_id_and_date` (`date`,`machine_id`),
-  KEY `idx_dailies_date_machine_id_state` (`date`,`machine_id`,`state`),
-  KEY `idx_dailies_date_state` (`date`,`state`),
-  KEY `idx_dailies_date` (`date`)
-) ENGINE=InnoDB AUTO_INCREMENT=3229 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3229 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:19
+-- Dump completed on 2016-09-01 17:59:21

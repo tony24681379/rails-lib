@@ -16,29 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `problem_categories`
+-- Table structure for table `maintain_states`
 --
 
-DROP TABLE IF EXISTS `problem_categories`;
+DROP TABLE IF EXISTS `maintain_states`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `problem_categories` (
+CREATE TABLE `maintain_states` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `problem` text COLLATE utf8_unicode_ci,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `problem_categories`
+-- Dumping data for table `maintain_states`
 --
 
-LOCK TABLES `problem_categories` WRITE;
-/*!40000 ALTER TABLE `problem_categories` DISABLE KEYS */;
-INSERT INTO `problem_categories` VALUES (4,'Kiosk 查詢平台','2016-07-05 03:58:51','2016-07-05 03:58:51'),(5,'非靠卡電腦','2016-07-05 03:58:51','2016-07-05 03:58:51'),(6,'一般靠卡電腦','2016-07-05 03:58:51','2016-07-05 03:58:51'),(7,'預約靠卡電腦','2016-07-05 03:58:51','2016-07-05 03:58:51'),(8,'多媒體設備','2016-07-05 03:58:51','2016-07-05 03:58:51');
-/*!40000 ALTER TABLE `problem_categories` ENABLE KEYS */;
+LOCK TABLES `maintain_states` WRITE;
+/*!40000 ALTER TABLE `maintain_states` DISABLE KEYS */;
+INSERT INTO `maintain_states` VALUES (1,'未接收','2016-09-01 08:55:07','2016-09-01 08:55:07'),(2,'待處理','2016-09-01 08:55:07','2016-09-01 08:55:07'),(3,'處理中','2016-09-01 08:55:07','2016-09-01 08:55:07'),(4,'已完成','2016-09-01 08:55:07','2016-09-01 08:55:07');
+/*!40000 ALTER TABLE `maintain_states` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:20
+-- Dump completed on 2016-09-01 17:59:21

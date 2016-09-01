@@ -16,29 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `status_table`
+-- Table structure for table `schema_migrations`
 --
 
-DROP TABLE IF EXISTS `status_table`;
+DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `status_table` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `device_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `device_status` int(11) NOT NULL DEFAULT '0',
-  `date` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `whoid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `status_table`
+-- Dumping data for table `schema_migrations`
 --
 
-LOCK TABLES `status_table` WRITE;
-/*!40000 ALTER TABLE `status_table` DISABLE KEYS */;
-/*!40000 ALTER TABLE `status_table` ENABLE KEYS */;
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('20160323073524'),('20160328034216'),('20160328040514'),('20160627022617'),('20160701035020'),('20160706035523'),('20160706041211'),('20160711045134'),('20160713041334'),('20160714164644'),('20160727030143'),('20160727043022');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:20
+-- Dump completed on 2016-09-01 17:59:20

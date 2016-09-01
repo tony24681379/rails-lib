@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160727043022) do
 
   create_table "dailies", force: :cascade do |t|
     t.date     "date"
-    t.integer  "machine_id", limit: 4
+    t.integer  "machine_id", limit: 4 #string
     t.integer  "state",      limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20160727043022) do
     t.string   "machine_id",     limit: 255
     t.string   "user_id",        limit: 255
     t.string   "problem_detail", limit: 255
-    t.integer  "situation",      limit: 4
+    t.integer  "situation",      limit: 4 #maintain_state
     t.string   "maintainer_id",  limit: 255
-    t.string   "comment",        limit: 255
+    t.string   "comment",        limit: 255# solved_detail
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

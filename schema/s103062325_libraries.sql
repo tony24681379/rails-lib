@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `device_information_table`
+-- Table structure for table `libraries`
 --
 
-DROP TABLE IF EXISTS `device_information_table`;
+DROP TABLE IF EXISTS `libraries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `device_information_table` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `device_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `device_position` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `date` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `libraries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `branch` varchar(255) DEFAULT NULL,
+  `floor` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `device_information_table`
+-- Dumping data for table `libraries`
 --
 
-LOCK TABLES `device_information_table` WRITE;
-/*!40000 ALTER TABLE `device_information_table` DISABLE KEYS */;
-/*!40000 ALTER TABLE `device_information_table` ENABLE KEYS */;
+LOCK TABLES `libraries` WRITE;
+/*!40000 ALTER TABLE `libraries` DISABLE KEYS */;
+INSERT INTO `libraries` VALUES (1,'總圖',1,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(2,'總圖',2,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(3,'總圖',3,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(4,'總圖',4,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(5,'總圖',5,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(6,'總圖',6,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(7,'人社',1,'2016-09-01 08:55:07','2016-09-01 08:55:07'),(8,'人社',2,'2016-09-01 08:55:07','2016-09-01 08:55:07');
+/*!40000 ALTER TABLE `libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:19
+-- Dump completed on 2016-09-01 17:59:21

@@ -16,29 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `maintain_states`
+-- Table structure for table `maintain_groups`
 --
 
-DROP TABLE IF EXISTS `maintain_states`;
+DROP TABLE IF EXISTS `maintain_groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `maintain_states` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `state` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `maintain_groups` (
+  `group` varchar(255) NOT NULL,
+  `user_id` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  UNIQUE KEY `index_maintain_groups_on_group` (`group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `maintain_states`
+-- Dumping data for table `maintain_groups`
 --
 
-LOCK TABLES `maintain_states` WRITE;
-/*!40000 ALTER TABLE `maintain_states` DISABLE KEYS */;
-INSERT INTO `maintain_states` VALUES (1,'未接收','2016-09-01 07:36:25','2016-09-01 07:36:25'),(2,'待處理','2016-09-01 07:36:25','2016-09-01 07:36:25'),(3,'處理中','2016-09-01 07:36:25','2016-09-01 07:36:25'),(4,'已完成','2016-09-01 07:36:25','2016-09-01 07:36:25');
-/*!40000 ALTER TABLE `maintain_states` ENABLE KEYS */;
+LOCK TABLES `maintain_groups` WRITE;
+/*!40000 ALTER TABLE `maintain_groups` DISABLE KEYS */;
+INSERT INTO `maintain_groups` VALUES ('Kiosk查詢平台',NULL,'2016-09-01 08:55:07','2016-09-01 08:55:07'),('一般靠卡電腦',NULL,'2016-09-01 08:55:07','2016-09-01 08:55:07'),('多媒體設備',NULL,'2016-09-01 08:55:08','2016-09-01 08:55:08'),('非靠卡電腦',NULL,'2016-09-01 08:55:07','2016-09-01 08:55:07'),('預約靠卡電腦',NULL,'2016-09-01 08:55:07','2016-09-01 08:55:07');
+/*!40000 ALTER TABLE `maintain_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:20
+-- Dump completed on 2016-09-01 17:59:20

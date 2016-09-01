@@ -16,26 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `schema_migrations`
+-- Table structure for table `user_states`
 --
 
-DROP TABLE IF EXISTS `schema_migrations`;
+DROP TABLE IF EXISTS `user_states`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `schema_migrations` (
-  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  UNIQUE KEY `unique_schema_migrations` (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `user_states` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `state` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `schema_migrations`
+-- Dumping data for table `user_states`
 --
 
-LOCK TABLES `schema_migrations` WRITE;
-/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20160323073457'),('20160323073524'),('20160323074514'),('20160328034216'),('20160328040514'),('20160418041011'),('20160425023323'),('20160425023956'),('20160425030743'),('20160425030905'),('20160624032112'),('20160624033540'),('20160627022617'),('20160627032231'),('20160627032439'),('20160629024855'),('20160701035020'),('20160705030232'),('20160706031412'),('20160706034101'),('20160706035523'),('20160706035924'),('20160706040932'),('20160706041211'),('20160711045134'),('20160712024009'),('20160713030923'),('20160713034008'),('20160713041334'),('20160714160413'),('20160714161145'),('20160714164644'),('20160727030143'),('20160727043022');
-/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+LOCK TABLES `user_states` WRITE;
+/*!40000 ALTER TABLE `user_states` DISABLE KEYS */;
+INSERT INTO `user_states` VALUES (1,'未紀錄','2016-09-01 08:55:06','2016-09-01 08:55:06'),(2,'使用中','2016-09-01 08:55:06','2016-09-01 08:55:06'),(3,'良好','2016-09-01 08:55:06','2016-09-01 08:55:06'),(4,'問題排除','2016-09-01 08:55:06','2016-09-01 08:55:06'),(5,'通知人員','2016-09-01 08:55:06','2016-09-01 08:55:06'),(6,'其他','2016-09-01 08:55:07','2016-09-01 08:55:07');
+/*!40000 ALTER TABLE `user_states` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-01 16:11:19
+-- Dump completed on 2016-09-01 17:59:21
