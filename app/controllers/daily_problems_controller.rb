@@ -25,6 +25,7 @@ class DailyProblemsController < ApplicationController
     @libaries = Library.select('branch').distinct
     @floor = Machine.select('floor').distinct
     @all_machines = Machine.order("machine_id")
+    @maintain_state = MaintainState.select('state').distinct
   end
 
   # GET /daily_problems/1/edit
@@ -32,6 +33,7 @@ class DailyProblemsController < ApplicationController
     @libaries = Library.select('branch').distinct
     @floor = Machine.select('floor').distinct
     @all_machines = Machine.order("machine_id")
+    @maintain_state = MaintainState.select('state').distinct
   end
 
   # POST /daily_problems
