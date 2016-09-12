@@ -35,6 +35,10 @@
     <%= f.label :situation %><br>
     <%= f.select :situation, options_from_collection_for_select(@maintain_state, "state", "state") %>
   </div>
+    <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
