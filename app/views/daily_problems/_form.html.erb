@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :situation %><br>
-    <%= select_tag 'situation', options_from_collection_for_select(@maintain_state, "state", "state") %>
+    <%= f.select :situation, options_from_collection_for_select(@maintain_state, "state", "state") %>
   </div>
   <div class="actions">
     <%= f.submit %>
