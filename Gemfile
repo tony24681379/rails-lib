@@ -51,3 +51,5 @@ gem 'chartkick'
 gem 'hightop'
 #group by date
 gem 'groupdate'
+# post
+gem "rest-client"
