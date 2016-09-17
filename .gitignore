@@ -17,3 +17,6 @@
 
 # Ignore email account
 config/email.yml
+
+# Ignore database info
+config/database.yml
