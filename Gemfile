@@ -53,3 +53,5 @@ gem 'hightop'
 gem 'groupdate'
 # post
 gem "rest-client"
+#auto job
+gem "activejob"
