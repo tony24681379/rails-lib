@@ -9,15 +9,15 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: demo_test
-  host: 
-  username: 
+  database: demo_development
+  host: 0.0.0.0 
+  username: peter3846
   password:
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: demo_production
-  host: 
-  username: 
+  database: demo_development
+  host: 0.0.0.0 
+  username: peter3846
   password:

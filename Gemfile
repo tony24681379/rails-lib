@@ -55,3 +55,7 @@ gem 'groupdate'
 gem "rest-client"
 #auto job
 gem "activejob"
+#schedule
+gem 'whenever', :require => false
+#schedule
+gem 'clockwork'

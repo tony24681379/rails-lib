@@ -13,8 +13,8 @@ class UserMailer < ApplicationMailer
   def notify_problem
     @receiver = "tp6_3846@yahoo.com.tw"
     @another = "smluo@lib.nthu.edu.tw"
+    #@another2 = "lovemeimeicat@gmail.com"
     @daily_problems = DailyProblem.where("created_at > ?", Time.now.beginning_of_day)
-    mail(:to => @receiver, :cc => @another, :subject => "測試")
-    #mail to: "to@example.org"
+    mail(:to => @receiver, :subject => "巡檢系統通知測試")
   end
 end
