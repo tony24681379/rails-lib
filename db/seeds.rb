@@ -13,7 +13,7 @@ UserState.create(state:'問題排除')
 UserState.create(state:'通知人員')
 UserState.create(state:'其他')
 
-MaintainState.create(state:'未接收')
+#MaintainState.create(state:'未接收')
 MaintainState.create(state:'待處理')
 MaintainState.create(state:'處理中')
 MaintainState.create(state:'已完成')

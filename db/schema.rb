@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912155002) do
+ActiveRecord::Schema.define(version: 20160927172455) do
 
   create_table "dailies", force: :cascade do |t|
     t.date     "date"
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20160912155002) do
     t.string   "machine_id",     limit: 255
     t.string   "user_id",        limit: 255
     t.string   "problem_detail", limit: 255
-    t.string   "situation",      limit: 255
+    t.string   "situation",      limit: 255, default: "待處理"
     t.string   "maintainer_id",  limit: 255
     t.string   "comment",        limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   create_table "libraries", force: :cascade do |t|
