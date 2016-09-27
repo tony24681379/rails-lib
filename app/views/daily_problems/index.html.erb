@@ -1,5 +1,7 @@
 <h1>Listing Daily Problems</h1>
 
+<%= select_tag "states", options_from_collection_for_select(@states, "state", "state") %>
+
 <table class="table table-striped">
   <thead>
     <tr>

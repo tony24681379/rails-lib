@@ -10,6 +10,7 @@ class DailyProblemsController < ApplicationController
       .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
     # test for chart
     @dailys = DailyProblem.all
+    @states = MaintainState.all
   end
 
   # GET /daily_problems/1
