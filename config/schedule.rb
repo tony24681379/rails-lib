@@ -25,7 +25,6 @@ set :environment, :development
 set :output, 'log/cron.log' #設定log的路徑
 
 every 1.day, :at => '2:00 pm' do
-
 #every 10.minutes do
     #rake "Tasks:AutoSend"
     #runner "UserMailer.notify_problem.deliver_later!"
