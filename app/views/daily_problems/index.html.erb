@@ -1,6 +1,10 @@
 <h1>Listing Daily Problems</h1>
 
-<%= select_tag "states", options_from_collection_for_select(@states, "state", "state") %>
+
+<div class="field">
+  <%= label_tag 'state' %><br>
+  <%= select_tag "state", options_from_collection_for_select(@states, "state", "state"), :onchange => "get_problems(state.value)" %>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -49,9 +53,9 @@
 <br>
 <br>
 
-<%= bar_chart @dailys.group(:machine_id).count %>
+<%= bar_chart @dailys.group(:machine_id).count, xtitle: "machine", ytitle: "times", discrete: true %>
 
 <br>
 <br>
 
-<%= line_chart @dailys.group(:machine_id).group_by_day(:date).count %>
+<%= line_chart @dailys.group(:machine_id).group_by_day(:date).count, xtitle: "date", ytitle: "times", discrete: true %>

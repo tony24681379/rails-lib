@@ -4,13 +4,15 @@ class DailyProblemsController < ApplicationController
   # GET /daily_problems
   # GET /daily_problems.json
   def index
+    @states = MaintainState.all
     @daily_problems = DailyProblem.joins("
       join machines m on daily_problems.machine_id = m.machine_id
       join users u on daily_problems.user_id = u.account") \
       .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .order("date DESC")
+      #.where("situation = ?",@states.first.state)
     # test for chart
     @dailys = DailyProblem.all
-    @states = MaintainState.all
   end
 
   # GET /daily_problems/1
@@ -94,6 +96,16 @@ class DailyProblemsController < ApplicationController
       options << "<option value=#{s.id}>#{s.machine_id}</option>"
     end
     render :text => options
+  end
+  
+  def get_problems
+   #@daily_problems = DailyProblem.joins("
+   #    join machines m on daily_problems.machine_id = m.machine_id
+   #    join users u on daily_problems.user_id = u.account") \
+   #    .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+   #    .where("situation = ?",params[:state])
+   #    .order("date DESC")
+   redirect_to :back
   end
 
   private
