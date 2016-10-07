@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
     @receiver = "tp6_3846@yahoo.com.tw"
     @another = "smluo@lib.nthu.edu.tw"
     #@another2 = "lovemeimeicat@gmail.com"
-    @daily_problems = DailyProblem.where("date > ?", Time.now.beginning_of_day)
+    @daily_problems = DailyProblem.where("date >= ?", Time.now.beginning_of_day)
     mail(:to => @receiver, :cc => @another, :subject => "巡檢系統通知測試")
   end
 end
