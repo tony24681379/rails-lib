@@ -11,6 +11,11 @@ class DailyProblemsController < ApplicationController
       .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
       .order("date DESC")
       #.where("situation = ?",@states.first.state)
+    @daily_problems.each do |daily_problem|
+      if daily_problem.comment != ""
+        daily_problem.situation = "已完成"
+      end
+    end
     # test for chart
     @dailys = DailyProblem.all
   end
