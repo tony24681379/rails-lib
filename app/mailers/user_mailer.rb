@@ -15,6 +15,13 @@ class UserMailer < ApplicationMailer
     @another = "smluo@lib.nthu.edu.tw"
     #@another2 = "lovemeimeicat@gmail.com"
     @daily_problems = DailyProblem.where("date >= ?", Time.now.beginning_of_day)
-    mail(:to => @receiver, :cc => @another, :subject => "巡檢系統通知測試")
+    @daily_problems.each do |daily_problem|
+      if daily_problem.comment != ""
+        daily_problem.situation = "已完成"
+      end
+    end
+    if @daily_problems.count > 0 
+      mail(:to => @receiver, :cc => @another, :subject => "巡檢系統通知測試")
+    end
   end
 end
