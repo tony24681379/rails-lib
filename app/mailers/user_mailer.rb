@@ -16,7 +16,7 @@ class UserMailer < ApplicationMailer
     #@another2 = "lovemeimeicat@gmail.com"
     @daily_problems = DailyProblem.where("date >= ?", Time.now.beginning_of_day)
     @daily_problems.each do |daily_problem|
-      if daily_problem.comment != ""
+      if not daily_problem.comment.blank?
         daily_problem.situation = "已完成"
       end
     end

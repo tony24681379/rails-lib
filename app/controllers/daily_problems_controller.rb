@@ -12,7 +12,7 @@ class DailyProblemsController < ApplicationController
       .order("date DESC")
       #.where("situation = ?",@states.first.state)
     @daily_problems.each do |daily_problem|
-      if daily_problem.comment != ""
+      if not daily_problem.comment.blank?
         daily_problem.situation = "已完成"
       end
     end
