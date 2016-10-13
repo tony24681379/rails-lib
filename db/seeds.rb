@@ -189,4 +189,4 @@ Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'�
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F17')
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F18')
 Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F19')
-Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F縮')
+Machine.create(branch:'人社', floor:2, place:'公用電腦', maintain_group:'一般靠卡電腦', machine_id:'HS-2F20')
