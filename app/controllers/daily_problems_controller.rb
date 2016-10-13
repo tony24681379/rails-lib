@@ -15,7 +15,25 @@ class DailyProblemsController < ApplicationController
       if not daily_problem.comment.blank?
         daily_problem.situation = "已完成"
       end
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+      
     end
+    
+    # Machine.where("machine_id = ?", DailyProblem.first.machine_id).select("place")
+    
     # test for chart
     @dailys = DailyProblem.all
   end
