@@ -11,5 +11,5 @@
 desc 'send routine email'
 task send_routine_email: :environment do
   # ... set options if any
-  UserMailer.notify_problem.deliver_now!
+  UserMailer.notify_problem
 end
