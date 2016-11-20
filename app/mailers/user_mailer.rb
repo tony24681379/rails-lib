@@ -58,7 +58,7 @@ class UserMailer < ApplicationMailer
     end
     
     @daily_problem = daily_problem
-    mail(:to => @receiver, :cc => @another, :subject => "巡檢系統通知測試")
+    mail(:to => @receiver, :cc => @another, :subject => "巡檢系統通知")
   end
   
 end
