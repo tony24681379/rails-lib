@@ -1,15 +1,55 @@
 <h1>Listing Daily Problems</h1>
 
-
+<!--
 <div class="field">
   <%= label_tag 'state' %><br>
-  <%= select_tag "state", options_from_collection_for_select(@states, "state", "state"), :onchange => "get_problems(state.value)" %>
+  <%= select_tag "state", options_from_collection_for_select(@states, "state", "state") %>
 </div>
+-->
+<!--
+<%= link_to '待處理', 'daily_problems/select_uncompleted' %>
+<%= link_to '處理中', 'daily_problems/select_completing' %>
+<%= link_to '已完成', 'daily_problems/select_completed' %>
+-->
+
+<style>
+select {
+  width: 95px;
+  height: 300px;
+  font-size: 200px;
+}
+th, td {
+  text-align: left;
+}
+</style>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Date</th>
+      <th>
+        <select id="situation" width="10em" height="10em" line-height="10em" name="" onchange="javascript:location.href = this.value;">
+          <option value="daily_problems/index" selected>所有時間</option>
+          <option value="daily_problems/select_today">本日</option>
+          <option value="daily_problems/select_week">本週</option>
+          <option value="daily_problems/select_month">本月</option>
+        </select>
+      </th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>
+        <select id="situation" name="" onchange="javascript:location.href = this.value;">
+          <option value="daily_problems/index" selected>所有問題</option>
+          <option value="daily_problems/select_uncompleted">待處理</option>
+          <option value="daily_problems/select_completing">處理中</option>
+          <option value="daily_problems/select_completed">已完成</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th>Date</th> 
       <th>Branch</th>
       <th>Floor</th>
       <th>Machine</th>

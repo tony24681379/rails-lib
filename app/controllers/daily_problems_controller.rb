@@ -1,6 +1,161 @@
 class DailyProblemsController < ApplicationController
   before_action :set_daily_problem, only: [:show, :edit, :update, :destroy]
 
+  def select_today
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .where("date >= ?", Time.now.beginning_of_day).order("date DESC")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+      
+    end
+    #@dailys = DailyProblem.all
+  end
+  
+  def select_week
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .where("date >= ?", Time.now.beginning_of_week).order("date DESC")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+      
+    end
+    #@dailys = DailyProblem.all
+  end
+  
+  def select_month
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .where("date >= ?", Time.now.beginning_of_month).order("date DESC")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+      
+    end
+    #@dailys = DailyProblem.all
+  end
+  
+  def select_uncompleted #待處理
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .order("date DESC").where("situation = ?","待處理")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+    end
+  end
+  
+  def select_completing #處理中
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .order("date DESC").where("situation = ?","處理中")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+    end
+  end
+  
+  def select_completed #已完成
+    @states = MaintainState.all
+    @daily_problems = DailyProblem.joins("
+      join machines m on daily_problems.machine_id = m.machine_id
+      join users u on daily_problems.user_id = u.account") \
+      .select("daily_problems.*, m.branch, m.place, m.floor, u.username")
+      .order("date DESC").where("situation = ?","已完成")
+    @daily_problems.each do |daily_problem|
+      group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
+      
+      case group
+      when 'Kiosk查詢平台'
+        daily_problem.maintainer_id = '陳玉芬'
+      when '非靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '一般靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '預約靠卡電腦'
+        daily_problem.maintainer_id = '高見成'
+      when '多媒體設備'
+        daily_problem.maintainer_id = '黃美惠'
+      end
+    end
+  end
   # GET /daily_problems
   # GET /daily_problems.json
   def index
@@ -12,9 +167,6 @@ class DailyProblemsController < ApplicationController
       .order("date DESC")
       #.where("situation = ?",@states.first.state)
     @daily_problems.each do |daily_problem|
-      if not daily_problem.comment.blank?
-        daily_problem.situation = "已完成"
-      end
       group = Machine.where("machine_id = ?", daily_problem.machine_id).first.maintain_group
       
       case group

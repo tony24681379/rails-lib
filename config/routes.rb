@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'daily_problems/select_month', :to => 'daily_problems#select_month'
+
+  get 'daily_problems/select_week', :to => 'daily_problems#select_week'
+
+  get 'daily_problems/select_today', :to => 'daily_problems#select_today'
+
+  get 'daily_problems/select_completing', :to => 'daily_problems#select_completing'
+
+  get 'daily_problems/select_uncompleted', :to => 'daily_problems#select_uncompleted'
+
+  get 'daily_problems/select_completed', :to => 'daily_problems#select_completed'
+
   resources :maintain_states
 
   resources :user_states
