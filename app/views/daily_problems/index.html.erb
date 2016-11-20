@@ -12,22 +12,11 @@
 <%= link_to '已完成', 'daily_problems/select_completed' %>
 -->
 
-<style>
-select {
-  width: 95px;
-  height: 300px;
-  font-size: 200px;
-}
-th, td {
-  text-align: left;
-}
-</style>
-
 <table class="table table-striped">
   <thead>
     <tr>
       <th>
-        <select id="situation" width="10em" height="10em" line-height="10em" name="" onchange="javascript:location.href = this.value;">
+        <select id="situation" name="" onchange="javascript:location.href = this.value;">
           <option value="daily_problems/index" selected>所有時間</option>
           <option value="daily_problems/select_today">本日</option>
           <option value="daily_problems/select_week">本週</option>
